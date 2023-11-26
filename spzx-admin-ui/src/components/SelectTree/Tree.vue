@@ -26,20 +26,20 @@
     暂无数据
   </div>
   <el-tree
-      v-else
-      class="common-tree"
-      ref="tree"
-      :data="data"
-      :node-key="nodeKey"
-      :show-checkbox="multiple"
-      :check-strictly="treeProps['check-strictly'] || true"
-      :expand-on-click-node="false"
-      :check-on-click-node="true"
-      :default-expanded-keys="treeProps['default-expanded-keys'] || value"
-      :default-checked-keys="value"
-      @node-click="handleNodeClick"
-      @check-change="handleCheckChange"
-      v-bind="treeProps"
+    v-else
+    class="common-tree"
+    ref="tree"
+    :data="data"
+    :node-key="nodeKey"
+    :show-checkbox="multiple"
+    :check-strictly="treeProps['check-strictly'] || true"
+    :expand-on-click-node="false"
+    :check-on-click-node="true"
+    :default-expanded-keys="treeProps['default-expanded-keys'] || value"
+    :default-checked-keys="value"
+    @node-click="handleNodeClick"
+    @check-change="handleCheckChange"
+    v-bind="treeProps"
   ></el-tree>
 </template>
 <script>
@@ -70,8 +70,8 @@ export default defineComponent({
       },
     },
   },
-  setup(props, {emit}) {
-    const {multiple, treeProps} = props
+  setup(props, { emit }) {
+    const { multiple, treeProps } = props
     const state = reactive({
       nodeKey: treeProps['node-key'] || 'id',
       tree: ref(null),
@@ -101,13 +101,13 @@ export default defineComponent({
     })
 
     watch(
-        () => props.value,
-        v => {
-          state.updateValue(v)
-        },
-        {
-          immediate: true,
-        }
+      () => props.value,
+      v => {
+        state.updateValue(v)
+      },
+      {
+        immediate: true,
+      }
     )
 
     return toRefs(state)
@@ -117,7 +117,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 .common-tree {
   overflow: auto;
-
   :deep {
     .el-tree-node {
       &.is-checked {

@@ -36,9 +36,9 @@
 
 <template>
   <div class="lock-wrap">
-    <Unlock/>
-    <Clock/>
-    <current-time/>
+    <Unlock />
+    <Clock />
+    <current-time />
   </div>
 </template>
 
@@ -55,8 +55,7 @@ export default defineComponent({
     Clock,
     CurrentTime,
   },
-  setup() {
-  },
+  setup() {},
 })
 </script>
 

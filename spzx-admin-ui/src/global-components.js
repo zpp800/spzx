@@ -21,5 +21,5 @@
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
 
-export {default as SvgIcon} from '@/components/SvgIcon/index.vue'
-export {default as ProTable} from '@/components/ProTable/index.vue'
+export { default as SvgIcon } from '@/components/SvgIcon/index.vue'
+export { default as ProTable } from '@/components/ProTable/index.vue'

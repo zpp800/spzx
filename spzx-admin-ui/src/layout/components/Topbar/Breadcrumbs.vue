@@ -36,19 +36,19 @@
 
 <template>
   <el-breadcrumb
-      separator-class="el-icon-arrow-right"
-      class="breadcrumb"
-      :class="{
+    separator-class="el-icon-arrow-right"
+    class="breadcrumb"
+    :class="{
       mobile: device === 'mobile',
       show: isHorizontalMenu,
       hide: breadcrumbs.length <= 1,
     }"
   >
     <el-breadcrumb-item
-        v-for="(item, index) in breadcrumbs"
-        :key="index"
-        :class="{ no_link: index === breadcrumbs.length - 1 }"
-        :to="index < breadcrumbs.length - 1 ? item.path : ''"
+      v-for="(item, index) in breadcrumbs"
+      :key="index"
+      :class="{ no_link: index === breadcrumbs.length - 1 }"
+      :to="index < breadcrumbs.length - 1 ? item.path : ''"
     >
       {{ $t(item.meta.title) }}
     </el-breadcrumb-item>
@@ -58,35 +58,28 @@
 import {useApp} from '@/pinia/modules/app'
 import {useLayoutsettings} from '@/pinia/modules/layoutSettings'
 import {storeToRefs} from 'pinia'
-import {
-  defineComponent,
-  computed,
-  ref,
-  onBeforeMount,
-  watch,
-  getCurrentInstance,
-} from 'vue'
+import {computed, defineComponent, getCurrentInstance, onBeforeMount, ref, watch,} from 'vue'
 import {useRouter} from 'vue-router'
 
 export default defineComponent({
-  setup(props, {emit}) {
-    const {proxy} = getCurrentInstance()
-    const {device} = storeToRefs(useApp())
+  setup(props, { emit }) {
+    const { proxy } = getCurrentInstance()
+    const { device } = storeToRefs(useApp())
     const router = useRouter()
     const route = router.currentRoute // 这里不使用useRoute获取当前路由，否则下面watch监听路由的时候会有警告
     const breadcrumbs = ref([])
     const defaultSettings = useLayoutsettings()
     const isHorizontalMenu = computed(
-        () => defaultSettings.menus.mode === 'horizontal'
+      () => defaultSettings.menus.mode === 'horizontal'
     )
 
     const getBreadcrumbs = route => {
-      const home = [{path: '/', meta: {title: proxy.$t('menu.homepage')}}]
+      const home = [{ path: '/', meta: { title: proxy.$t('menu.homepage') } }]
       if (route.name === 'home') {
         return home
       } else {
         const matched = route.matched.filter(
-            item => !!item.meta && !!item.meta.title
+          item => !!item.meta && !!item.meta.title
         )
 
         return [...home, ...matched]
@@ -98,15 +91,15 @@ export default defineComponent({
     })
 
     watch(
-        route,
-        newRoute => {
-          route.value.meta.truetitle = proxy.$t(route.value.meta.title)
-          breadcrumbs.value = getBreadcrumbs(newRoute)
-          emit('on-breadcrumbs-change', breadcrumbs.value.length > 1)
-        },
-        {
-          immediate: true,
-        }
+      route,
+      newRoute => {
+        route.value.meta.truetitle = proxy.$t(route.value.meta.title)
+        breadcrumbs.value = getBreadcrumbs(newRoute)
+        emit('on-breadcrumbs-change', breadcrumbs.value.length > 1)
+      },
+      {
+        immediate: true,
+      }
     )
 
     return {
@@ -124,12 +117,10 @@ export default defineComponent({
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
   ::v-deep(a),
   ::v-deep(.is-link) {
     font-weight: normal;
   }
-
   // ::v-deep(.el-breadcrumb__item) {
   //   float: none;
   // }
@@ -138,18 +129,15 @@ export default defineComponent({
       color: #97a8be !important;
     }
   }
-
   &.mobile {
     display: none;
   }
-
   &.show {
     display: block;
     margin: 0;
     padding: 16px;
     background: #f5f5f5;
   }
-
   &.hide {
     display: none;
   }

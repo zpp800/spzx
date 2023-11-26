@@ -50,7 +50,7 @@ import useCloseTag from '@/hooks/useCloseTag'
 
 export default defineComponent({
   setup() {
-    const {closeTag} = useCloseTag()
+    const { closeTag } = useCloseTag()
     return {
       closeTag,
     }

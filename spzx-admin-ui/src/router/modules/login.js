@@ -13,9 +13,9 @@
 const Login = () => import('@/views/login/index.vue')
 
 export default [
-    {
-        path: '/login',
-        name: 'login',
-        component: Login,
-    },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
+  },
 ]

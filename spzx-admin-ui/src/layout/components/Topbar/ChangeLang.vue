@@ -52,9 +52,9 @@
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item
-            @click="changeLang(item.value)"
-            v-for="item in langlist"
-            :key="item.value"
+          @click="changeLang(item.value)"
+          v-for="item in langlist"
+          :key="item.value"
         >
           {{ item.name }}
         </el-dropdown-item>
@@ -75,7 +75,7 @@ const langlist = [
     value: 'en',
   },
 ]
-const {changeLang} = useLang()
+const { changeLang } = useLang()
 </script>
 
 <style lang="scss" scoped>
@@ -85,11 +85,9 @@ const {changeLang} = useLang()
   cursor: pointer;
   display: flex;
   align-items: center;
-
   &:hover {
     background: #f5f5f5;
   }
-
   .icon {
     font-size: 18px;
   }

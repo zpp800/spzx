@@ -32,8 +32,8 @@
  -->
 
 <template>
-  <svg-icon class="icon" v-if="isCustomSvg" :name="icon"/>
-  <component :is="icon" v-else-if="!!icon" class="icon"/>
+  <svg-icon class="icon" v-if="isCustomSvg" :name="icon" />
+  <component :is="icon" v-else-if="!!icon" class="icon" />
   <span>{{ $t(title) }}</span>
 </template>
 
@@ -42,7 +42,7 @@ import {computed, defineComponent} from 'vue'
 
 export default defineComponent({
   props: ['title', 'icon'],
-  setup({icon}) {
+  setup({ icon }) {
     const isCustomSvg = computed(() => icon && icon.startsWith('icon-'))
 
     return {

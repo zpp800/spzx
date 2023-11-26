@@ -34,11 +34,11 @@
 
 <template>
   <div
-      class="left"
-      :class="{ collapse: collapse, mobile: device === 'mobile' }"
+    class="left"
+    :class="{ collapse: collapse, mobile: device === 'mobile' }"
   >
-    <logo/>
-    <menus :collapse="collapse"/>
+    <logo />
+    <menus :collapse="collapse" />
   </div>
   <div class="mask" @click="closeSidebar"></div>
 </template>
@@ -57,8 +57,8 @@ export default defineComponent({
   },
   setup() {
     const appStore = useApp()
-    const {sidebar, device} = storeToRefs(appStore)
-    const {setCollapse} = appStore
+    const { sidebar, device } = storeToRefs(appStore)
+    const { setCollapse } = appStore
     const collapse = computed(() => sidebar.value.collapse)
 
     const closeSidebar = () => {
@@ -82,22 +82,18 @@ export default defineComponent({
   overflow: hidden;
   display: flex;
   flex-direction: column;
-
   &.collapse {
     width: 64px;
-
     ::v-deep(.brand .title) {
       display: none;
     }
   }
-
   &.mobile {
     height: 100%;
     position: fixed;
     left: 0;
     top: 0;
     z-index: 10;
-
     & + .mask {
       position: fixed;
       left: 0;
@@ -107,10 +103,8 @@ export default defineComponent({
       background: rgba(0, 0, 0, 0.3);
       z-index: 9;
     }
-
     &.collapse {
       transform: translateX(-100%);
-
       & + .mask {
         display: none;
       }

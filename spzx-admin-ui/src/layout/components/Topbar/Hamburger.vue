@@ -27,12 +27,12 @@
 
 <template>
   <el-icon
-      :size="20"
-      class="fold-btn"
-      :class="{ collapse: collapse }"
-      @click="handleToggleMenu"
+    :size="20"
+    class="fold-btn"
+    :class="{ collapse: collapse }"
+    @click="handleToggleMenu"
   >
-    <Fold/>
+    <Fold />
   </el-icon>
 </template>
 <script>
@@ -43,8 +43,8 @@ import {computed, defineComponent} from 'vue'
 export default defineComponent({
   setup() {
     const appStore = useApp()
-    const {sidebar} = storeToRefs(appStore)
-    const {setCollapse} = appStore
+    const { sidebar } = storeToRefs(appStore)
+    const { setCollapse } = appStore
     const handleToggleMenu = () => {
       setCollapse(+!sidebar.value.collapse)
     }
@@ -60,7 +60,6 @@ export default defineComponent({
   line-height: 48px;
   padding: 0 10px;
   cursor: pointer;
-
   &.collapse {
     transform: scale(-1, 1);
   }

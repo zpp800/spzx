@@ -59,38 +59,30 @@
  -->
 <template>
   <el-select
-      ref="select"
-      class="select"
-      style="width:100%"
-      clearable
-      :multiple="multiple"
-      v-model="selectValue"
-      :value-key="treeProps.label"
-      @remove-tag="handleRemove"
-      @clear="handleClear"
-      popper-class="select-popover"
-      :popper-append-to-body="false"
-      collapse-tags
-      :placeholder="placeholder"
+    ref="select"
+    class="select"
+    style="width:100%"
+    clearable
+    :multiple="multiple"
+    v-model="selectValue"
+    :value-key="treeProps.label"
+    @remove-tag="handleRemove"
+    @clear="handleClear"
+    popper-class="select-popover"
+    :popper-append-to-body="false"
+    collapse-tags
+    :placeholder="placeholder"
   >
     <el-option
-        v-for="(item, index) in selectOptions"
-        :key="index"
-        :label="item[treeProps.label]"
-        :value="item"
+      v-for="(item, index) in selectOptions"
+      :key="index"
+      :label="item[treeProps.label]"
+      :value="item"
     />
   </el-select>
 </template>
 <script>
-import {
-  defineComponent,
-  onBeforeMount,
-  reactive,
-  ref,
-  watch,
-  toRefs,
-  inject,
-} from 'vue'
+import {defineComponent, inject, onBeforeMount, reactive, ref, toRefs, watch,} from 'vue'
 
 export default defineComponent({
   props: {
@@ -114,10 +106,10 @@ export default defineComponent({
       },
     },
   },
-  setup(props, {emit}) {
+  setup(props, { emit }) {
     const {
       multiple,
-      treeProps: {label, children, nodeKey},
+      treeProps: { label, children, nodeKey },
     } = props
     const state = reactive({
       select: ref(null),
@@ -130,8 +122,8 @@ export default defineComponent({
           return
         }
         state.selectValue = multiple
-            ? state.selectOptions.filter(item => values.includes(item[nodeKey]))
-            : state.selectOptions.find(item => values === item[nodeKey]) || {}
+          ? state.selectOptions.filter(item => values.includes(item[nodeKey]))
+          : state.selectOptions.find(item => values === item[nodeKey]) || {}
       },
       updateSelectOptions(data) {
         state.selectOptions = state.flatTree(data)
@@ -151,10 +143,10 @@ export default defineComponent({
       },
       handleRemove() {
         emit(
-            'select-change',
-            multiple
-                ? state.selectValue.map(item => item[nodeKey])
-                : state.selectValue[nodeKey]
+          'select-change',
+          multiple
+            ? state.selectValue.map(item => item[nodeKey])
+            : state.selectValue[nodeKey]
         )
       },
       handleClear() {
@@ -163,25 +155,25 @@ export default defineComponent({
     })
 
     watch(
-        () => props.data,
-        v => {
-          state.updateSelectOptions(v)
-          state.updateSelectValue(state.newValue)
-        },
-        {
-          immediate: true,
-        }
+      () => props.data,
+      v => {
+        state.updateSelectOptions(v)
+        state.updateSelectValue(state.newValue)
+      },
+      {
+        immediate: true,
+      }
     )
 
     watch(
-        () => props.value,
-        v => {
-          state.newValue = v
-          state.updateSelectValue(state.newValue)
-        },
-        {
-          immediate: true,
-        }
+      () => props.value,
+      v => {
+        state.newValue = v
+        state.updateSelectValue(state.newValue)
+      },
+      {
+        immediate: true,
+      }
     )
 
     onBeforeMount(() => {

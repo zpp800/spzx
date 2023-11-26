@@ -32,7 +32,7 @@
  -->
 <template>
   <el-config-provider :locale="locales[lang]">
-    <router-view/>
+    <router-view />
   </el-config-provider>
 </template>
 
@@ -48,7 +48,7 @@ export default defineComponent({
     [ElConfigProvider.name]: ElConfigProvider,
   },
   setup() {
-    const {lang} = useLang()
+    const { lang } = useLang()
     return {
       lang,
       locales: {
@@ -68,7 +68,6 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-
   * {
     outline: none;
   }

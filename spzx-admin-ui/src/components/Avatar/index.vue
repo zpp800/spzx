@@ -1,11 +1,11 @@
 <template>
   <div class="userinfo">
     <template v-if="!userinfo">
-      <i class="el-icon-user"/>
+      <i class="el-icon-user" />
       <h3>admin</h3>
     </template>
     <template v-else>
-      <img class="avatar" :src="userinfo.avatar"/>
+      <img class="avatar" :src="userinfo.avatar" />
       <h3>{{ userinfo.name }}</h3>
     </template>
   </div>
@@ -17,9 +17,9 @@ import {useUserinfo} from './hooks/useUserinfo'
 
 export default defineComponent({
   setup() {
-    const {userinfo} = useUserinfo()
+    const { userinfo } = useUserinfo()
 
-    return {userinfo}
+    return { userinfo }
   },
 })
 </script>
@@ -28,18 +28,15 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
-
   i {
     font-size: 48px;
     color: $mainColor;
   }
-
   h3 {
     font-size: 14px;
     font-weight: normal;
     margin: 8px 0;
   }
-
   .avatar {
     width: 64px;
     height: 64px;

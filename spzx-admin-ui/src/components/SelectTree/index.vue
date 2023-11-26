@@ -27,38 +27,38 @@
 
 <template>
   <el-popover
-      ref="popover"
-      placement="bottom-start"
-      trigger="click"
-      :popper-options="{ boundariesElement: 'viewport' }"
-      v-model:visible="visible"
-      :disabled="disabled"
+    ref="popover"
+    placement="bottom-start"
+    trigger="click"
+    :popper-options="{ boundariesElement: 'viewport' }"
+    v-model:visible="visible"
+    :disabled="disabled"
   >
     <tree
-        ref="tree"
-        :value="is_multiple ? modelValue : modelValue ? [modelValue] : []"
-        :data="data || treeProps.data"
-        :multiple="is_multiple"
-        :tree-props="treeProps"
-        @tree-change="handleTreeChange"
-        @close="visible = false"
+      ref="tree"
+      :value="is_multiple ? modelValue : modelValue ? [modelValue] : []"
+      :data="data || treeProps.data"
+      :multiple="is_multiple"
+      :tree-props="treeProps"
+      @tree-change="handleTreeChange"
+      @close="visible = false"
     />
 
     <template #reference>
       <custom-select
-          ref="select"
-          :value="modelValue"
-          :data="data || treeProps.data"
-          :multiple="is_multiple"
-          :tree-props="{ children, label, nodeKey }"
-          @select-change="handleSelectChange"
+        ref="select"
+        :value="modelValue"
+        :data="data || treeProps.data"
+        :multiple="is_multiple"
+        :tree-props="{ children, label, nodeKey }"
+        @select-change="handleSelectChange"
       />
     </template>
   </el-popover>
 </template>
 
 <script>
-import {defineComponent, reactive, ref, toRefs, onMounted, provide} from 'vue'
+import {defineComponent, onMounted, provide, reactive, ref, toRefs} from 'vue'
 
 import Tree from './Tree.vue'
 import CustomSelect from './Select.vue'
@@ -98,9 +98,9 @@ export default defineComponent({
       },
     },
   },
-  setup(props, {emit}) {
+  setup(props, { emit }) {
     provide('placeholder', props.placeholder)
-    const {treeProps, multiple} = props
+    const { treeProps, multiple } = props
     const state = reactive({
       popover: ref(null),
       visible: false,
@@ -108,13 +108,13 @@ export default defineComponent({
       tree: ref(null),
       is_multiple: multiple || treeProps['show-checkbox'],
       label:
-          treeProps.props && treeProps.props.label
-              ? treeProps.props.label
-              : 'label',
+        treeProps.props && treeProps.props.label
+          ? treeProps.props.label
+          : 'label',
       children:
-          treeProps.props && treeProps.props.children
-              ? treeProps.props.children
-              : 'children',
+        treeProps.props && treeProps.props.children
+          ? treeProps.props.children
+          : 'children',
       nodeKey: treeProps['node-key'] || 'id',
       handleTreeChange(value) {
         emit('update:modelValue', value)
@@ -135,7 +135,7 @@ export default defineComponent({
 
     onMounted(() => {
       state.initPopoverStyle(
-          state.select.select.selectWrapper.offsetWidth + 'px'
+        state.select.select.selectWrapper.offsetWidth + 'px'
       )
     })
 

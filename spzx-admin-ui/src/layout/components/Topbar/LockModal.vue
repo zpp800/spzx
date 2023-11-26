@@ -56,25 +56,25 @@
     {{ $t('topbar.lock-title') }}
   </el-dropdown-item>
   <el-dialog
-      :title="$t('topbar.lock-title')"
-      v-model="dialogVisible"
-      width="640px"
-      custom-class="lock-modal"
-      append-to-body
+    :title="$t('topbar.lock-title')"
+    v-model="dialogVisible"
+    width="640px"
+    custom-class="lock-modal"
+    append-to-body
   >
-    <Avatar/>
+    <Avatar />
     <el-form
-        :model="lockModel"
-        :rules="lockRules"
-        ref="lockForm"
-        label-width="90px"
+      :model="lockModel"
+      :rules="lockRules"
+      ref="lockForm"
+      label-width="90px"
     >
       <el-form-item :label="$t('topbar.lock-password')" prop="password">
         <el-input
-            type="password"
-            v-model.trim="lockModel.password"
-            autocomplete="off"
-            @keyup.enter="submitForm"
+          type="password"
+          v-model.trim="lockModel.password"
+          autocomplete="off"
+          @keyup.enter="submitForm"
         ></el-input>
       </el-form-item>
       <el-form-item>
@@ -97,7 +97,7 @@ export default defineComponent({
     Avatar,
   },
   setup() {
-    const {proxy} = getCurrentInstance()
+    const { proxy } = getCurrentInstance()
     const router = useRouter()
     const dialogVisible = ref(false)
     const lockForm = ref(null)
@@ -106,7 +106,7 @@ export default defineComponent({
     })
     const lockRules = reactive({
       password: [
-        {required: true, message: proxy.$t('topbar.lock-rules-password')},
+        { required: true, message: proxy.$t('topbar.lock-rules-password') },
       ],
     })
     const submitForm = () => {

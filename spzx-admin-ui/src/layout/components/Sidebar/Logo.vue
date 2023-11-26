@@ -34,7 +34,7 @@
 
 <template>
   <div class="brand">
-    <img class="logo" src="~@/assets/logo.svg" @click="goHome"/>
+    <img class="logo" src="~@/assets/logo.svg" @click="goHome" />
     <div class="title">Vue3 Element Admin</div>
   </div>
 </template>
@@ -48,7 +48,7 @@ export default defineComponent({
     const goHome = () => {
       router.push('/')
     }
-    return {goHome}
+    return { goHome }
   },
 })
 </script>
@@ -59,13 +59,11 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: center;
-
   .logo {
     cursor: pointer;
     max-width: 32px;
     max-height: 32px;
   }
-
   .title {
     color: #fff;
     font-size: 14px;

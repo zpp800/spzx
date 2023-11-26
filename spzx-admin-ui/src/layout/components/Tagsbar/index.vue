@@ -23,43 +23,43 @@
 <template>
   <div class="tags-container" :class="{ hide: !isTagsbarShow }">
     <el-scrollbar
-        ref="scrollContainer"
-        :vertical="false"
-        class="scroll-container"
-        @wheel.prevent="onScroll"
+      ref="scrollContainer"
+      :vertical="false"
+      class="scroll-container"
+      @wheel.prevent="onScroll"
     >
       <router-link
-          v-for="(tag, i) in tagList"
-          :key="tag.fullPath"
-          :to="tag"
-          :ref="el => setItemRef(i, el)"
-          custom
-          v-slot="{ navigate, isExactActive }"
+        v-for="(tag, i) in tagList"
+        :key="tag.fullPath"
+        :to="tag"
+        :ref="el => setItemRef(i, el)"
+        custom
+        v-slot="{ navigate, isExactActive }"
       >
         <div
-            class="tags-item"
-            :class="isExactActive ? 'active' : ''"
-            @click="navigate"
-            @click.middle="closeTag(tag)"
-            @contextmenu.prevent="openMenu(tag, $event)"
+          class="tags-item"
+          :class="isExactActive ? 'active' : ''"
+          @click="navigate"
+          @click.middle="closeTag(tag)"
+          @contextmenu.prevent="openMenu(tag, $event)"
         >
           <span class="title">{{ $t(tag.title) }}</span>
 
           <el-icon
-              v-if="!isAffix(tag)"
-              class="el-icon-close"
-              @click.prevent.stop="closeTag(tag)"
+            v-if="!isAffix(tag)"
+            class="el-icon-close"
+            @click.prevent.stop="closeTag(tag)"
           >
-            <Close/>
+            <Close />
           </el-icon>
         </div>
       </router-link>
     </el-scrollbar>
   </div>
   <ul
-      v-show="visible"
-      :style="{ left: left + 'px', top: top + 'px' }"
-      class="contextmenu"
+    v-show="visible"
+    :style="{ left: left + 'px', top: top + 'px' }"
+    class="contextmenu"
   >
     <li @click="refreshSelectedTag(selectedTag)">{{ $t('tags.refresh') }}</li>
     <li v-if="!isAffix(selectedTag)" @click="closeTag(selectedTag)">
@@ -73,7 +73,7 @@
 </template>
 
 <script>
-import {defineComponent, computed, getCurrentInstance} from 'vue'
+import {computed, defineComponent, getCurrentInstance} from 'vue'
 import {useTags} from './hooks/useTags'
 import {useContextMenu} from './hooks/useContextMenu'
 import {useLayoutsettings} from '@/pinia/modules/layoutSettings'
@@ -112,15 +112,12 @@ export default defineComponent({
   width: 100%;
   background: #fff;
   border-bottom: 1px solid #e0e4ef;
-
   &.hide {
     display: none;
   }
-
   .scroll-container {
     white-space: nowrap;
     overflow: hidden;
-
     ::v-deep(.el-scrollbar__bar) {
       bottom: 0px;
     }
@@ -140,20 +137,16 @@ export default defineComponent({
     margin-left: -1px;
     vertical-align: bottom;
     cursor: pointer;
-
     &:first-of-type {
       margin-left: 15px;
     }
-
     &:last-of-type {
       margin-right: 15px;
     }
-
     &.active {
       color: #303133;
       background: #f5f5f5;
     }
-
     .title {
       display: inline-block;
       vertical-align: top;
@@ -162,7 +155,6 @@ export default defineComponent({
       white-space: nowrap;
       text-overflow: ellipsis;
     }
-
     .el-icon-close {
       color: #5c5c5c;
       margin-left: 8px;
@@ -173,13 +165,11 @@ export default defineComponent({
       text-align: center;
       transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
       transform-origin: 100% 50%;
-
       &:before {
         transform: scale(0.8);
         display: inline-block;
         vertical-align: -2px;
       }
-
       &:hover {
         background-color: #333;
         color: #fff;
@@ -187,7 +177,6 @@ export default defineComponent({
     }
   }
 }
-
 .contextmenu {
   margin: 0;
   background: #fff;
@@ -201,12 +190,10 @@ export default defineComponent({
   color: #333;
   box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.3);
   white-space: nowrap;
-
   li {
     margin: 0;
     padding: 8px 16px;
     cursor: pointer;
-
     &:hover {
       background: #eee;
     }

@@ -48,7 +48,7 @@
   <div v-if="errorLogs.length > 0" class="errLog-container">
     <el-badge :is-dot="true" @click="dialogTableVisible = true">
       <el-button style="padding: 8px 10px;" size="small" type="danger">
-        <svg-icon name="bug"/>
+        <svg-icon name="bug" />
       </el-button>
     </el-badge>
 
@@ -56,10 +56,10 @@
       <template #title>
         <span style="padding-right: 10px;">错误日志</span>
         <el-button
-            size="mini"
-            type="primary"
-            icon="el-icon-delete"
-            @click="clearAll"
+          size="mini"
+          type="primary"
+          icon="el-icon-delete"
+          @click="clearAll"
         >
           Clear All
         </el-button>
@@ -120,8 +120,8 @@ export default defineComponent({
   setup() {
     const dialogTableVisible = ref(false)
     const errorStore = useErrorlog()
-    const {logs: errorLogs} = storeToRefs(errorStore)
-    const {clearErrorLog} = errorStore
+    const { logs: errorLogs } = storeToRefs(errorStore)
+    const { clearErrorLog } = errorStore
     const clearAll = () => {
       dialogTableVisible.value = false
       clearErrorLog()
@@ -140,7 +140,6 @@ export default defineComponent({
 .errLog-container {
   margin-right: 10px;
 }
-
 .message-title {
   font-size: 16px;
   color: #333;

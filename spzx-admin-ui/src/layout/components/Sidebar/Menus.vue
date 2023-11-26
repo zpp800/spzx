@@ -37,17 +37,17 @@
 <template>
   <el-scrollbar class="scroll">
     <el-menu
-        class="menu"
-        :mode="mode"
-        :collapse="collapse"
-        :uniqueOpened="true"
-        :router="true"
-        :default-active="activePath"
-        :background-color="variables.menuBg"
-        :text-color="variables.menuTextColor"
-        :active-text-color="variables.menuActiveTextColor"
+      class="menu"
+      :mode="mode"
+      :collapse="collapse"
+      :uniqueOpened="true"
+      :router="true"
+      :default-active="activePath"
+      :background-color="variables.menuBg"
+      :text-color="variables.menuTextColor"
+      :active-text-color="variables.menuActiveTextColor"
     >
-      <submenu v-for="menu in menus" :key="menu.url" :menu="menu"/>
+      <submenu v-for="menu in menus" :key="menu.url" :menu="menu" />
     </el-menu>
   </el-scrollbar>
 </template>
@@ -75,7 +75,7 @@ export default defineComponent({
   },
   setup() {
     const route = useRoute()
-    const {menus} = storeToRefs(useMenus())
+    const { menus } = storeToRefs(useMenus())
 
     return {
       menus,
@@ -104,10 +104,8 @@ export default defineComponent({
     }
   }
 }
-
 .el-menu-item.is-active {
   background-color: $menuActiveBg !important;
-
   &:hover {
     background-color: $menuActiveBg !important;
   }
@@ -119,7 +117,6 @@ export default defineComponent({
     position: relative;
     background-color: $collapseMenuActiveBg !important;
     color: $collapseMenuActiveColor !important;
-
     &::before {
       content: '';
       position: absolute;
@@ -144,7 +141,6 @@ export default defineComponent({
     line-height: $horizontalMenuHeight;
     border-bottom: none;
   }
-
   .el-menu-item.is-active,
   .el-sub-menu.is-active .el-sub-menu__title {
     border: none;
@@ -157,7 +153,6 @@ export default defineComponent({
   flex: 1;
   overflow-x: hidden;
   overflow-y: auto;
-
   .menu {
     border: none;
   }

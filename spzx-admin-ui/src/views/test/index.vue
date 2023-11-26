@@ -1,11 +1,11 @@
 <template>
   <pro-table
-      ref="table"
-      :title="$t('test/list.title')"
-      :request="getList"
-      :columns="columns"
-      :search="searchConfig"
-      @selectionChange="handleSelectionChange"
+    ref="table"
+    :title="$t('test/list.title')"
+    :request="getList"
+    :columns="columns"
+    :search="searchConfig"
+    @selectionChange="handleSelectionChange"
   >
     <!-- 工具栏 -->
     <template #toolbar>
@@ -26,9 +26,9 @@
     </template>
     <template #operate="scope">
       <el-button
-          size="small"
-          type="primary"
-          @click="$router.push(`/test/edit/${scope.row.id}`)"
+        size="small"
+        type="primary"
+        @click="$router.push(`/test/edit/${scope.row.id}`)"
       >
         {{ $t('public.edit') }}
       </el-button>
@@ -51,8 +51,8 @@ export default defineComponent({
     const state = reactive({
       // 表格列配置，大部分属性跟el-table-column配置一样
       columns: [
-        {type: 'selection', width: 56},
-        {label: 'test/list.index', type: 'index', width: 80},
+        { type: 'selection', width: 56 },
+        { label: 'test/list.index', type: 'index', width: 80 },
         {
           label: 'test/list.name',
           prop: 'nickName',
@@ -202,14 +202,14 @@ export default defineComponent({
             name: 'daterange',
             type: 'daterange',
             trueNames: ['startDate', 'endDate'],
-            style: {width: '400px'},
+            style: { width: '400px' },
           },
           {
             label: 'test/list.timerange',
             name: 'datetimerange',
             type: 'datetimerange',
             trueNames: ['startTime', 'endTime'],
-            style: {width: '400px'},
+            style: { width: '400px' },
             defaultValue: ['2020-10-10 9:00:00', '2020-10-11 18:30:00'],
           },
           {
@@ -240,7 +240,7 @@ export default defineComponent({
       async getList(params) {
         console.log(params)
         // params是从组件接收的，包含分页和搜索字段。
-        const {data} = await getUsers(params)
+        const { data } = await getUsers(params)
 
         // 必须要返回一个对象，包含data数组和total总数
         return {
@@ -254,7 +254,7 @@ export default defineComponent({
       table.value.refresh()
     }
 
-    return {...toRefs(state), refresh, table}
+    return { ...toRefs(state), refresh, table }
   },
 })
 </script>

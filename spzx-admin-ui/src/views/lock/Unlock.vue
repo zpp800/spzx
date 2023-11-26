@@ -53,24 +53,24 @@
     </div>
   </h1>
   <div class="unlock-modal" v-show="showModal">
-    <Avatar class="userinfo-unlock"/>
+    <Avatar class="userinfo-unlock" />
     <el-form :model="lockModel" :rules="lockRules" ref="lockForm">
       <el-form-item prop="password">
         <el-input
-            type="password"
-            v-model.trim="lockModel.password"
-            autocomplete="off"
-            :placeholder="$t('topbar.lock-rules-password2')"
-            @keyup.enter="submitForm"
-            style="width:320px"
+          type="password"
+          v-model.trim="lockModel.password"
+          autocomplete="off"
+          :placeholder="$t('topbar.lock-rules-password2')"
+          @keyup.enter="submitForm"
+          style="width:320px"
         >
           <template #append>
             <el-button
-                type="primary"
-                class="btn-unlock"
-                icon="Right"
-                :loading="loading"
-                @click="submitForm"
+              type="primary"
+              class="btn-unlock"
+              icon="Right"
+              :loading="loading"
+              @click="submitForm"
             ></el-button>
           </template>
         </el-input>
@@ -87,7 +87,7 @@
   </div>
 </template>
 <script>
-import {defineComponent, ref, reactive, getCurrentInstance} from 'vue'
+import {defineComponent, getCurrentInstance, reactive, ref} from 'vue'
 import Avatar from '@/components/Avatar/index.vue'
 import {AesEncryption} from '@/utils/encrypt'
 import {useRoute, useRouter} from 'vue-router'
@@ -101,7 +101,7 @@ export default defineComponent({
     Avatar,
   },
   setup() {
-    const {proxy: ctx} = getCurrentInstance()
+    const { proxy: ctx } = getCurrentInstance()
     const router = useRouter()
     const route = useRoute()
     const showModal = ref(false)
@@ -112,11 +112,11 @@ export default defineComponent({
     const loading = ref(false)
 
     const appStore = useApp()
-    const {authorization} = storeToRefs(appStore)
-    const {clearToken, setScreenCode} = appStore
+    const { authorization } = storeToRefs(appStore)
+    const { clearToken, setScreenCode } = appStore
     const accountStore = useAccount()
-    const {userinfo} = storeToRefs(accountStore)
-    const {getUserinfo} = accountStore
+    const { userinfo } = storeToRefs(accountStore)
+    const { getUserinfo } = accountStore
 
     const checkPwd = async (rule, value, callback) => {
       const cipher = authorization.value && authorization.value.screenCode
@@ -129,7 +129,7 @@ export default defineComponent({
       } else {
         // 尝试登录
         loading.value = true
-        const {code} = await Login({
+        const { code } = await Login({
           username: userinfo.value.name,
           password: value,
         })
@@ -143,7 +143,7 @@ export default defineComponent({
 
     const lockRules = reactive({
       password: [
-        {required: true, message: ctx.$t('topbar.lock-rules-password2')},
+        { required: true, message: ctx.$t('topbar.lock-rules-password2') },
         {
           validator: checkPwd,
           message: ctx.$t('topbar.lock-rules-password3'),
@@ -173,7 +173,7 @@ export default defineComponent({
         }
 
         // 返回锁屏前的页面
-        router.push({path: route.query.redirect || '/', replace: true})
+        router.push({ path: route.query.redirect || '/', replace: true })
         // 清除锁屏密码
         setScreenCode('')
       })
@@ -213,7 +213,6 @@ export default defineComponent({
   margin: 0;
   display: flex;
   align-items: flex-end;
-
   .unlock-btn {
     color: #aaa;
     font-size: 16px;
@@ -222,7 +221,6 @@ export default defineComponent({
     cursor: pointer;
   }
 }
-
 .unlock-modal {
   position: fixed;
   z-index: 10;
@@ -245,16 +243,13 @@ export default defineComponent({
   .btn-unlock {
     background: $mainColor !important;
     color: #fff !important;
-
     ::v-deep(i) {
       transform: scale(1.5);
     }
   }
 }
-
 .userinfo-unlock {
   margin-bottom: 16px;
-
   ::v-deep(h3) {
     color: #fff;
   }

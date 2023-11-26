@@ -37,7 +37,7 @@
 <template>
   <router-view v-slot="{ Component }">
     <keep-alive :include="cacheList">
-      <component :is="Component" :key="key"/>
+      <component :is="Component" :key="key" />
     </keep-alive>
   </router-view>
 </template>
@@ -50,7 +50,7 @@ import {useTags} from '@/pinia/modules/tags'
 export default defineComponent({
   setup() {
     const route = useRoute()
-    const {cacheList} = storeToRefs(useTags())
+    const { cacheList } = storeToRefs(useTags())
     const key = computed(() => route.fullPath)
 
     return {
