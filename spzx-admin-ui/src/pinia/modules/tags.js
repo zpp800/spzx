@@ -9,8 +9,8 @@
  * @Github: https://github.com/huzhushan/vue3-element-admin
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
-import {defineStore} from 'pinia'
-import {getItem, removeItem, setItem} from '@/utils/storage' //getItem和setItem是封装的操作localStorage的方法
+import { defineStore } from 'pinia'
+import { getItem, removeItem, setItem } from '@/utils/storage' //getItem和setItem是封装的操作localStorage的方法
 const TAGLIST = 'VEA-TAGLIST'
 
 export const useTags = defineStore('tags', {

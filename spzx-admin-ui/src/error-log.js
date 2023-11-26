@@ -20,8 +20,8 @@
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
 
-import {nextTick} from 'vue'
-import {useErrorlog} from './pinia/modules/errorLog'
+import { nextTick } from 'vue'
+import { useErrorlog } from './pinia/modules/errorLog'
 // import store from '@/store'
 
 // 判断环境，决定是否开启错误监控

@@ -40,8 +40,8 @@
 </template>
 
 <script>
-import {defineComponent, reactive, ref, toRefs} from 'vue'
-import {getUsers} from '@/api/test'
+import { defineComponent, reactive, ref, toRefs } from 'vue'
+import { getUsers } from '@/api/test'
 
 export default defineComponent({
   name: 'testList',

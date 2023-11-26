@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import {defineComponent} from 'vue'
-import {useUserinfo} from './hooks/useUserinfo'
+import { defineComponent } from 'vue'
+import { useUserinfo } from './hooks/useUserinfo'
 
 export default defineComponent({
   setup() {

@@ -31,7 +31,7 @@
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
 
-import {ref} from 'vue'
+import { ref } from 'vue'
 
 export const useScrollbar = tagsItem => {
   const scrollContainer = ref(null)

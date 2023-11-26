@@ -54,15 +54,15 @@
   </div>
 </template>
 <script>
-import {computed, defineComponent, ref} from 'vue'
+import { computed, defineComponent, ref } from 'vue'
 import Sidebar from './components/Sidebar/index.vue'
 import Topbar from './components/Topbar/index.vue'
 import Menus from './components/Sidebar/Menus.vue'
 import Tagsbar from './components/Tagsbar/index.vue'
 import Breadcrumbs from './components/Topbar/Breadcrumbs.vue'
 import Content from './components/Content/index.vue'
-import {useResizeHandler} from './hooks/useResizeHandler'
-import {useLayoutsettings} from '@/pinia/modules/layoutSettings'
+import { useResizeHandler } from './hooks/useResizeHandler'
+import { useLayoutsettings } from '@/pinia/modules/layoutSettings'
 
 export default defineComponent({
   name: 'layout',

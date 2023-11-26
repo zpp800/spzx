@@ -44,8 +44,8 @@
 </template>
 
 <script>
-import {defineComponent, onMounted, ref} from 'vue'
-import {parseTime} from '@/utils'
+import { defineComponent, onMounted, ref } from 'vue'
+import { parseTime } from '@/utils'
 
 export default defineComponent({
   setup() {

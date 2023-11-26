@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import {computed, defineComponent} from 'vue'
+import { computed, defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'SvgIcon',

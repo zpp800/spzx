@@ -51,12 +51,20 @@
 </template>
 
 <script>
-import {computed, defineComponent, getCurrentInstance, reactive, ref, toRefs, watch,} from 'vue'
-import {Login} from '@/api/login'
-import {useRoute, useRouter} from 'vue-router'
+import {
+  computed,
+  defineComponent,
+  getCurrentInstance,
+  reactive,
+  ref,
+  toRefs,
+  watch,
+} from 'vue'
+import { Login } from '@/api/login'
+import { useRoute, useRouter } from 'vue-router'
 import ChangeLang from '@/layout/components/Topbar/ChangeLang.vue'
 import useLang from '@/i18n/useLang'
-import {useApp} from '@/pinia/modules/app'
+import { useApp } from '@/pinia/modules/app'
 
 export default defineComponent({
   components: { ChangeLang },

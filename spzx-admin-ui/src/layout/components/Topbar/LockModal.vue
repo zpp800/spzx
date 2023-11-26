@@ -87,10 +87,10 @@
 </template>
 
 <script>
-import {defineComponent, getCurrentInstance, reactive, ref} from 'vue'
+import { defineComponent, getCurrentInstance, reactive, ref } from 'vue'
 import Avatar from '@/components/Avatar/index.vue'
-import {useRouter} from 'vue-router'
-import {useApp} from '@/pinia/modules/app'
+import { useRouter } from 'vue-router'
+import { useApp } from '@/pinia/modules/app'
 
 export default defineComponent({
   components: {
