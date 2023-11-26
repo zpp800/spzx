@@ -1,0 +1,42 @@
+spring:
+  #服务名称
+  application:
+    name: server-manager
+  profiles:
+    active: dev
+
+
+#springdoc:
+#  api-docs:
+#    # 是否开启接口文档
+#    enabled: true
+#  #  swagger-ui:
+#  #    # 持久化认证数据
+#  #    persistAuthorization: true
+#  info:
+#    # 标题
+#    title: '标题：$尚品甄选_接口文档'
+#    # 描述
+#    description: '描述：尚品甑选API接口文档'
+#    # 版本
+#    version: '版本号: 1.0'
+#    # 作者信息
+#    contact:
+#      name: Han Xi
+#      email: crazylionli@163.com
+#      url: https://gitee.com/dromara/RuoYi-Vue-Plus
+#  components:
+#    # 鉴权方式配置
+#    security-schemes:
+#      apiKey:
+#        type: APIKEY
+#        in: HEADER
+#        name: ${sa-token.token-name}
+#  #这里定义了两个分组，可定义多个，也可以不定义
+#  group-configs:
+#    - group: 'admin-api'
+#      paths-to-match:
+#        - '/admin/**'
+#        - '/test/**'
+
+
