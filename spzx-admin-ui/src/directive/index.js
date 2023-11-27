@@ -34,7 +34,7 @@
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
 
-import {useAccount} from '@/pinia/modules/account'
+import { useAccount } from '@/pinia/modules/account'
 
 export const Permission = app => {
   app.directive('permission', {

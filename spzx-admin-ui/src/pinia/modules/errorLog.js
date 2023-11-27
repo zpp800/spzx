@@ -9,7 +9,7 @@
  * @Github: https://github.com/huzhushan/vue3-element-admin
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
-import {defineStore} from 'pinia'
+import { defineStore } from 'pinia'
 
 export const useErrorlog = defineStore('errorLog', {
   state: () => ({

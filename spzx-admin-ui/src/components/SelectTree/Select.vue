@@ -82,7 +82,15 @@
   </el-select>
 </template>
 <script>
-import {defineComponent, inject, onBeforeMount, reactive, ref, toRefs, watch,} from 'vue'
+import {
+  defineComponent,
+  inject,
+  onBeforeMount,
+  reactive,
+  ref,
+  toRefs,
+  watch,
+} from 'vue'
 
 export default defineComponent({
   props: {

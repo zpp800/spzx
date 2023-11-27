@@ -52,12 +52,12 @@
   </el-scrollbar>
 </template>
 <script>
-import {computed, defineComponent} from 'vue'
+import { computed, defineComponent } from 'vue'
 import Submenu from './Submenu.vue'
-import {useRoute} from 'vue-router'
+import { useRoute } from 'vue-router'
 import config from './config/menu.module.scss'
-import {storeToRefs} from 'pinia'
-import {useMenus} from '@/pinia/modules/menu'
+import { storeToRefs } from 'pinia'
+import { useMenus } from '@/pinia/modules/menu'
 
 export default defineComponent({
   components: {

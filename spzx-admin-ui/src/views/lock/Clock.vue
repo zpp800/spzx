@@ -85,7 +85,7 @@
 </template>
 
 <script>
-import {defineComponent, onBeforeMount, reactive, toRefs} from 'vue'
+import { defineComponent, onBeforeMount, reactive, toRefs } from 'vue'
 
 export default defineComponent({
   setup() {

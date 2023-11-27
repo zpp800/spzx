@@ -6,7 +6,7 @@
   </dl>
 </template>
 <script>
-import {defineComponent} from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'test-no-cache', // 该name必须跟路由配置的name一致，不一致或者不设置name则不缓存

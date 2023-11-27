@@ -36,9 +36,9 @@
   </el-icon>
 </template>
 <script>
-import {useApp} from '@/pinia/modules/app'
-import {storeToRefs} from 'pinia'
-import {computed, defineComponent} from 'vue'
+import { useApp } from '@/pinia/modules/app'
+import { storeToRefs } from 'pinia'
+import { computed, defineComponent } from 'vue'
 
 export default defineComponent({
   setup() {

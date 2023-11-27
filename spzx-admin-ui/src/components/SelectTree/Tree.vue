@@ -43,7 +43,7 @@
   ></el-tree>
 </template>
 <script>
-import {defineComponent, reactive, ref, toRefs, watch} from 'vue'
+import { defineComponent, reactive, ref, toRefs, watch } from 'vue'
 
 export default defineComponent({
   props: {

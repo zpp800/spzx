@@ -4,8 +4,8 @@
   <router-link to="/test/noauth">点击进入只有admin才能访问的页面</router-link>
 </template>
 <script setup>
-import {useAccount} from '@/pinia/modules/account'
-import {storeToRefs} from 'pinia'
+import { useAccount } from '@/pinia/modules/account'
+import { storeToRefs } from 'pinia'
 
 const { userinfo } = storeToRefs(useAccount())
 </script>

@@ -30,11 +30,11 @@
  * @Github: https://github.com/huzhushan/vue3-element-admin
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
-import {storeToRefs} from 'pinia'
-import {useTags as useTagsbar} from '@/pinia/modules/tags'
-import {useScrollbar} from './useScrollbar'
-import {computed, nextTick, onBeforeMount, ref, watch} from 'vue'
-import {useRouter} from 'vue-router'
+import { storeToRefs } from 'pinia'
+import { useTags as useTagsbar } from '@/pinia/modules/tags'
+import { useScrollbar } from './useScrollbar'
+import { computed, nextTick, onBeforeMount, ref, watch } from 'vue'
+import { useRouter } from 'vue-router'
 
 export const isAffix = tag => {
   return !!tag.meta && !!tag.meta.affix

@@ -23,8 +23,8 @@
  * @Github: https://github.com/huzhushan/vue3-element-admin
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
-import {storeToRefs} from 'pinia'
-import {useAccount} from '@/pinia/modules/account'
+import { storeToRefs } from 'pinia'
+import { useAccount } from '@/pinia/modules/account'
 
 export const useUserinfo = () => {
   const { userinfo } = storeToRefs(useAccount())

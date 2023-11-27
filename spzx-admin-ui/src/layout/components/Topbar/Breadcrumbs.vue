@@ -55,11 +55,18 @@
   </el-breadcrumb>
 </template>
 <script>
-import {useApp} from '@/pinia/modules/app'
-import {useLayoutsettings} from '@/pinia/modules/layoutSettings'
-import {storeToRefs} from 'pinia'
-import {computed, defineComponent, getCurrentInstance, onBeforeMount, ref, watch,} from 'vue'
-import {useRouter} from 'vue-router'
+import { useApp } from '@/pinia/modules/app'
+import { useLayoutsettings } from '@/pinia/modules/layoutSettings'
+import { storeToRefs } from 'pinia'
+import {
+  computed,
+  defineComponent,
+  getCurrentInstance,
+  onBeforeMount,
+  ref,
+  watch,
+} from 'vue'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   setup(props, { emit }) {
