@@ -27,3 +27,10 @@ export const GetUserinfo = () => {
     method: 'get',
   })
 }
+// 获取验证码
+export const GetValidateCode = () => {
+  return request({
+    url: '/admin/system/index/generateValidateCode',
+    method: 'get',
+  })
+}

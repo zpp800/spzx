@@ -41,4 +41,16 @@ springdoc:
         - '/admin/**'
         - '/test/**'
 
-
+captcha:
+  # 验证码类型 MATH 数组计算 CHAR 字符验证
+  type: MATH
+  # LINE 线段干扰 CIRCLE 圆圈干扰 SHEAR 扭曲干扰
+  category: SHEAR
+  # 数字验证码位数
+  numberLength: 1
+  # 字符验证码长度
+  charLength: 4
+  # 验证码高度
+  height: 48
+  # 验证码宽度
+  width: 150
