@@ -37,7 +37,7 @@
   </el-sub-menu>
 </template>
 <script>
-import {defineComponent} from 'vue'
+import { defineComponent } from 'vue'
 import Item from './Item.vue'
 
 export default defineComponent({

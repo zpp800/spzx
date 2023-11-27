@@ -33,10 +33,10 @@
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
 
-import {useTags} from '@/pinia/modules/tags'
-import {nextTick, onBeforeUnmount, onMounted, reactive, toRefs} from 'vue'
-import {useRoute, useRouter} from 'vue-router'
-import {isAffix} from './useTags'
+import { useTags } from '@/pinia/modules/tags'
+import { nextTick, onBeforeUnmount, onMounted, reactive, toRefs } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import { isAffix } from './useTags'
 
 export const useContextMenu = tagList => {
   const router = useRouter()

@@ -45,7 +45,7 @@
   </el-button>
 </template>
 <script>
-import {defineComponent} from 'vue'
+import { defineComponent } from 'vue'
 import useCloseTag from '@/hooks/useCloseTag'
 
 export default defineComponent({

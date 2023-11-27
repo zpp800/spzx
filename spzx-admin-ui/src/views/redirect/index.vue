@@ -10,8 +10,8 @@
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
 -->
 <script>
-import {h} from 'vue'
-import {useRoute, useRouter} from 'vue-router'
+import { h } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 export default {
   setup() {

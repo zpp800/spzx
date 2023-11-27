@@ -111,9 +111,9 @@
 </template>
 
 <script>
-import {defineComponent, ref} from 'vue'
-import {useErrorlog} from '@/pinia/modules/errorLog'
-import {storeToRefs} from 'pinia'
+import { defineComponent, ref } from 'vue'
+import { useErrorlog } from '@/pinia/modules/errorLog'
+import { storeToRefs } from 'pinia'
 
 export default defineComponent({
   name: 'ErrorLog',

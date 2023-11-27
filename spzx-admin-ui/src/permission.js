@@ -33,14 +33,14 @@
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
 
-import {ElLoading} from 'element-plus'
+import { ElLoading } from 'element-plus'
 import router from '@/router'
 // import store from '@/store'
-import {TOKEN} from '@/pinia/modules/app' // TOKEN变量名
-import {nextTick} from 'vue'
-import {useApp} from './pinia/modules/app'
-import {useAccount} from './pinia/modules/account'
-import {useMenus} from './pinia/modules/menu'
+import { TOKEN } from '@/pinia/modules/app' // TOKEN变量名
+import { nextTick } from 'vue'
+import { useApp } from './pinia/modules/app'
+import { useAccount } from './pinia/modules/account'
+import { useMenus } from './pinia/modules/menu'
 
 const getPageTitle = title => {
   const { title: appTitle } = useApp()

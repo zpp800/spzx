@@ -1,4 +1,4 @@
-import {createI18n} from 'vue-i18n'
+import { createI18n } from 'vue-i18n'
 
 const getMessage = modules => {
   return Object.entries(modules).reduce((module, [path, mod]) => {

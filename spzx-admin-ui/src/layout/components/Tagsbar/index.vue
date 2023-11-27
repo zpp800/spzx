@@ -73,10 +73,10 @@
 </template>
 
 <script>
-import {computed, defineComponent, getCurrentInstance} from 'vue'
-import {useTags} from './hooks/useTags'
-import {useContextMenu} from './hooks/useContextMenu'
-import {useLayoutsettings} from '@/pinia/modules/layoutSettings'
+import { computed, defineComponent, getCurrentInstance } from 'vue'
+import { useTags } from './hooks/useTags'
+import { useContextMenu } from './hooks/useContextMenu'
+import { useLayoutsettings } from '@/pinia/modules/layoutSettings'
 
 export default defineComponent({
   name: 'Tagsbar',

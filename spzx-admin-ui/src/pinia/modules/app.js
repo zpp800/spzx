@@ -10,13 +10,13 @@
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
 
-import {defineStore} from 'pinia'
-import {getItem, removeItem, setItem} from '@/utils/storage' //getItem和setItem是封装的操作localStorage的方法
-import {AesEncryption} from '@/utils/encrypt'
-import {toRaw} from 'vue'
-import {useAccount} from './account'
-import {useTags} from './tags'
-import {useMenus} from './menu'
+import { defineStore } from 'pinia'
+import { getItem, removeItem, setItem } from '@/utils/storage' //getItem和setItem是封装的操作localStorage的方法
+import { AesEncryption } from '@/utils/encrypt'
+import { toRaw } from 'vue'
+import { useAccount } from './account'
+import { useTags } from './tags'
+import { useMenus } from './menu'
 
 export const TOKEN = 'VEA-TOKEN'
 const COLLAPSE = 'VEA-COLLAPSE'

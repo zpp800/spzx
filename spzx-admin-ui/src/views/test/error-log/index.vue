@@ -28,10 +28,10 @@
 </template>
 
 <script>
-import {defineComponent, onMounted} from 'vue'
+import { defineComponent, onMounted } from 'vue'
 import ErrorA from './components/ErrorTestA.vue'
 import ErrorB from './components/ErrorTestB.vue'
-import {TestError} from '@/api/test'
+import { TestError } from '@/api/test'
 
 export default defineComponent({
   name: 'test-error-log',

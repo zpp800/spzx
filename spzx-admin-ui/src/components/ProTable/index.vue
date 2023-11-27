@@ -251,7 +251,7 @@
   </div>
 </template>
 <script>
-import {defineComponent, onBeforeMount, reactive, toRefs, watch} from 'vue'
+import { defineComponent, onBeforeMount, reactive, toRefs, watch } from 'vue'
 
 const formatDate = (date, format) => {
   var obj = {

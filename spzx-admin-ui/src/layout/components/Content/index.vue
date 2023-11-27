@@ -42,10 +42,10 @@
   </router-view>
 </template>
 <script>
-import {storeToRefs} from 'pinia'
-import {computed, defineComponent} from 'vue'
-import {useRoute} from 'vue-router'
-import {useTags} from '@/pinia/modules/tags'
+import { storeToRefs } from 'pinia'
+import { computed, defineComponent } from 'vue'
+import { useRoute } from 'vue-router'
+import { useTags } from '@/pinia/modules/tags'
 
 export default defineComponent({
   setup() {
