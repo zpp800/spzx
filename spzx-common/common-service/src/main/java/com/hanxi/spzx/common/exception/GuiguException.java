@@ -1,4 +1,4 @@
-package com.hanxi.spzx.common.config.exception;
+package com.hanxi.spzx.common.exception;
 
 import com.hanxi.spzx.model.vo.common.ResultCodeEnum;
 import lombok.Data;
