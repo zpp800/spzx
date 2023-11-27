@@ -33,13 +33,13 @@
         <maven-compiler-plugin.verison>3.11.0</maven-compiler-plugin.verison>
     </properties>
 
-    <dependencies>
-        <!-- lombok的依赖 -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-    </dependencies>
+<!--    <dependencies>-->
+<!--        &lt;!&ndash; lombok的依赖 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.projectlombok</groupId>-->
+<!--            <artifactId>lombok</artifactId>-->
+<!--        </dependency>-->
+<!--    </dependencies>-->
 
     <!-- 管理依赖，版本锁定 -->
     <dependencyManagement>
