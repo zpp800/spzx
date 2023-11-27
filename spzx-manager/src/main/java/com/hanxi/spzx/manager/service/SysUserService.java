@@ -2,6 +2,7 @@ package com.hanxi.spzx.manager.service;
 
 
 import com.hanxi.spzx.model.dto.system.LoginDto;
+import com.hanxi.spzx.model.entity.system.SysUser;
 import com.hanxi.spzx.model.vo.system.LoginVo;
 
 public interface SysUserService {
@@ -12,4 +13,7 @@ public interface SysUserService {
      */
     public abstract LoginVo login(LoginDto loginDto) ;
 
+    SysUser getUserInfo(String token);
+
+    void logout(String token);
 }
