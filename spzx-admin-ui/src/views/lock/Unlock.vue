@@ -87,14 +87,14 @@
   </div>
 </template>
 <script>
-import {defineComponent, getCurrentInstance, reactive, ref} from 'vue'
+import { defineComponent, getCurrentInstance, reactive, ref } from 'vue'
 import Avatar from '@/components/Avatar/index.vue'
-import {AesEncryption} from '@/utils/encrypt'
-import {useRoute, useRouter} from 'vue-router'
-import {Login} from '@/api/login'
-import {useApp} from '@/pinia/modules/app'
-import {storeToRefs} from 'pinia'
-import {useAccount} from '@/pinia/modules/account'
+import { AesEncryption } from '@/utils/encrypt'
+import { useRoute, useRouter } from 'vue-router'
+import { Login } from '@/api/login'
+import { useApp } from '@/pinia/modules/app'
+import { storeToRefs } from 'pinia'
+import { useAccount } from '@/pinia/modules/account'
 
 export default defineComponent({
   components: {

@@ -21,7 +21,7 @@
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
 
-import {createPinia} from 'pinia'
+import { createPinia } from 'pinia'
 
 const pinia = createPinia()
 

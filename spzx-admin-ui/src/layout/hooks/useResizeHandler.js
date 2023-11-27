@@ -31,9 +31,9 @@
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
 
-import {storeToRefs} from 'pinia'
-import {useApp} from '@/pinia/modules/app'
-import {computed, onBeforeMount, onBeforeUnmount} from 'vue'
+import { storeToRefs } from 'pinia'
+import { useApp } from '@/pinia/modules/app'
+import { computed, onBeforeMount, onBeforeUnmount } from 'vue'
 
 const WIDTH = 768
 export const useResizeHandler = () => {

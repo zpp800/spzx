@@ -9,10 +9,10 @@
  * @Github: https://github.com/huzhushan/vue3-element-admin
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
-import {defineStore} from 'pinia'
-import router, {asyncRoutes, fixedRoutes} from '@/router'
-import {GetMenus} from '@/api/menu'
-import {ref} from 'vue'
+import { defineStore } from 'pinia'
+import router, { asyncRoutes, fixedRoutes } from '@/router'
+import { GetMenus } from '@/api/menu'
+import { ref } from 'vue'
 
 export const useMenus = defineStore('menu', () => {
   const generateUrl = (path, parentPath) => {

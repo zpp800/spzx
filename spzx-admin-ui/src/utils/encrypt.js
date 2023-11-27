@@ -34,8 +34,8 @@
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
 
-import {decrypt, encrypt} from 'crypto-js/aes'
-import UTF8, {parse} from 'crypto-js/enc-utf8'
+import { decrypt, encrypt } from 'crypto-js/aes'
+import UTF8, { parse } from 'crypto-js/enc-utf8'
 import pkcs7 from 'crypto-js/pad-pkcs7'
 import ECB from 'crypto-js/mode-ecb'
 import md5 from 'crypto-js/md5'

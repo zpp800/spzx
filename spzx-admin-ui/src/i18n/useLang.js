@@ -1,5 +1,5 @@
-import {computed} from 'vue'
-import {useI18n} from 'vue-i18n'
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 export default function useLang() {
   const i18n = useI18n()

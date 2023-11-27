@@ -69,11 +69,11 @@
   </el-dropdown>
 </template>
 <script>
-import {defineComponent} from 'vue'
-import {useRouter} from 'vue-router'
-import {useUserinfo} from '@/components/Avatar/hooks/useUserinfo'
+import { defineComponent } from 'vue'
+import { useRouter } from 'vue-router'
+import { useUserinfo } from '@/components/Avatar/hooks/useUserinfo'
 import LockModal from './LockModal.vue'
-import {useApp} from '@/pinia/modules/app'
+import { useApp } from '@/pinia/modules/app'
 
 export default defineComponent({
   components: {

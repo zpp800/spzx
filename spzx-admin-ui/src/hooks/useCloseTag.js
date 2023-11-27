@@ -34,9 +34,9 @@
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
 
-import {useTags} from '@/pinia/modules/tags'
-import {getCurrentInstance, reactive, toRefs} from 'vue'
-import {useRoute, useRouter} from 'vue-router'
+import { useTags } from '@/pinia/modules/tags'
+import { getCurrentInstance, reactive, toRefs } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 // 关闭当前标签
 export default () => {

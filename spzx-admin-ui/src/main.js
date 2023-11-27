@@ -34,7 +34,7 @@
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
 
-import {createApp} from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 // 引入element-plus
 import ElementPlus from 'element-plus'

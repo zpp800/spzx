@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import {defineComponent, onMounted, provide, reactive, ref, toRefs} from 'vue'
+import { defineComponent, onMounted, provide, reactive, ref, toRefs } from 'vue'
 
 import Tree from './Tree.vue'
 import CustomSelect from './Select.vue'

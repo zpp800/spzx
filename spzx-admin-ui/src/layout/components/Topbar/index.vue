@@ -63,16 +63,16 @@
   </div>
 </template>
 <script>
-import {computed, defineComponent} from 'vue'
+import { computed, defineComponent } from 'vue'
 import Logo from '@/layout/components/Sidebar/Logo.vue'
 import Hamburger from './Hamburger.vue'
 import Breadcrumbs from './Breadcrumbs.vue'
 import Userinfo from './Userinfo.vue'
 import ChangeLang from './ChangeLang.vue'
 import ErrorLog from '@/components/ErrorLog/index.vue'
-import {useLayoutsettings} from '@/pinia/modules/layoutSettings'
-import {storeToRefs} from 'pinia'
-import {useApp} from '@/pinia/modules/app'
+import { useLayoutsettings } from '@/pinia/modules/layoutSettings'
+import { storeToRefs } from 'pinia'
+import { useApp } from '@/pinia/modules/app'
 
 export default defineComponent({
   components: {
