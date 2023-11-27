@@ -1,5 +1,6 @@
 package com.hanxi.spzx.manager.controller;
 
+import com.hanxi.spzc.utils.AuthContextUtil;
 import com.hanxi.spzx.manager.service.SysUserService;
 import com.hanxi.spzx.manager.service.ValidateCodeService;
 import com.hanxi.spzx.model.dto.system.LoginDto;
@@ -32,11 +33,15 @@ public class IndexController {
     }
 
     @GetMapping(value = "/getUserInfo")
-    public Result<SysUser> getUserInfo(@RequestHeader(name = "Authorization") String token) {
-        token = StringUtils.substring(token,"Bearer ".length());
-        SysUser sysUser = sysUserService.getUserInfo(token) ;
-        return Result.build(sysUser , ResultCodeEnum.SUCCESS) ;
+    public Result getUserInfo() {
+        return Result.build(AuthContextUtil.get()  , ResultCodeEnum.SUCCESS) ;
     }
+//    @GetMapping(value = "/getUserInfo")
+//    public Result<SysUser> getUserInfo(@RequestHeader(name = "Authorization") String token) {
+//        token = StringUtils.substring(token,"Bearer ".length());
+//        SysUser sysUser = sysUserService.getUserInfo(token) ;
+//        return Result.build(sysUser , ResultCodeEnum.SUCCESS) ;
+//    }
 
     @Operation(summary = "登录接口")
     @PostMapping(value = "/login")

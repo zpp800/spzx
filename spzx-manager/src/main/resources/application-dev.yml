@@ -22,5 +22,20 @@ mybatis:
   config-location: classpath:/mybatis-config.xml
   mapper-locations: classpath:/mapper/*/*.xml
 
-
+# 自定义配置
+spzx:
+  auth:
+    noAuthUrls:
+      - /doc.html
+      - /v3/api-docs/**
+      - /admin/system/index/login
+      - /admin/system/index/generateValidateCode
+      # 静态资源
+      - /*.html
+      - /**/*.html
+      - /**/*.css
+      - /**/*.js
+      # 公共路径
+      - /favicon.ico
+      - /error
 
