@@ -2,10 +2,12 @@ package com.hanxi.spzx.manager.service.impl;
 
 import cn.hutool.core.lang.UUID;
 import com.alibaba.fastjson.JSON;
+import com.hanxi.spzx.common.config.exception.GuiguException;
 import com.hanxi.spzx.manager.mapper.SysUserMapper;
 import com.hanxi.spzx.manager.service.SysUserService;
 import com.hanxi.spzx.model.dto.system.LoginDto;
 import com.hanxi.spzx.model.entity.system.SysUser;
+import com.hanxi.spzx.model.vo.common.ResultCodeEnum;
 import com.hanxi.spzx.model.vo.system.LoginVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -29,14 +31,14 @@ public class SysUserServiceImpl implements SysUserService {
         // 根据用户名查询用户
         SysUser sysUser = sysUserMapper.selectByUserName(loginDto.getUserName());
         if(sysUser == null) {
-//            throw new GuiguException(ResultCodeEnum.LOGIN_ERROR) ;
+            throw new GuiguException(ResultCodeEnum.LOGIN_ERROR) ;
         }
 
         // 验证密码是否正确
         String inputPassword = loginDto.getPassword();
         String md5InputPassword = DigestUtils.md5DigestAsHex(inputPassword.getBytes());
         if(!md5InputPassword.equals(sysUser.getPassword())) {
-//            throw new GuiguException(ResultCodeEnum.LOGIN_ERROR);
+            throw new GuiguException(ResultCodeEnum.LOGIN_ERROR);
 //            throw new RuntimeException("用户名或者密码错误") ;
         }
 
