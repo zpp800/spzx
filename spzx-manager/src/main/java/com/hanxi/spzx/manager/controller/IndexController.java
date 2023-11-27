@@ -4,7 +4,6 @@ import com.hanxi.spzc.utils.AuthContextUtil;
 import com.hanxi.spzx.manager.service.SysUserService;
 import com.hanxi.spzx.manager.service.ValidateCodeService;
 import com.hanxi.spzx.model.dto.system.LoginDto;
-import com.hanxi.spzx.model.entity.system.SysUser;
 import com.hanxi.spzx.model.vo.common.Result;
 import com.hanxi.spzx.model.vo.common.ResultCodeEnum;
 import com.hanxi.spzx.model.vo.system.LoginVo;
@@ -13,7 +12,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "用户接口")
