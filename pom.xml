@@ -28,7 +28,18 @@
         <fastjson.version>2.0.21</fastjson.version>
         <lombok.version>1.18.20</lombok.version>
         <mybatis.version>3.0.1</mybatis.version>
+        <springdoc.version>2.2.0</springdoc.version>
+        <therapi-javadoc.version>0.15.0</therapi-javadoc.version>
+        <maven-compiler-plugin.verison>3.11.0</maven-compiler-plugin.verison>
     </properties>
+
+    <dependencies>
+        <!-- lombok的依赖 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 
     <!-- 管理依赖，版本锁定 -->
     <dependencyManagement>
@@ -60,7 +71,49 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.therapi</groupId>
+                <artifactId>therapi-runtime-javadoc</artifactId>
+                <version>${therapi-javadoc.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.verison}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <!--配置注解处理路径-->
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>com.github.therapi</groupId>
+                            <artifactId>therapi-runtime-javadoc-scribe</artifactId>
+                            <version>${therapi-javadoc.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+
+                    </annotationProcessorPaths>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
