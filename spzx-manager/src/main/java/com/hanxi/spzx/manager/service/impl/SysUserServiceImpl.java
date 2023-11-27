@@ -2,7 +2,7 @@ package com.hanxi.spzx.manager.service.impl;
 
 import cn.hutool.core.lang.UUID;
 import com.alibaba.fastjson.JSON;
-import com.hanxi.spzx.common.config.exception.GuiguException;
+import com.hanxi.spzx.common.exception.GuiguException;
 import com.hanxi.spzx.manager.mapper.SysUserMapper;
 import com.hanxi.spzx.manager.service.SysUserService;
 import com.hanxi.spzx.model.dto.system.LoginDto;
