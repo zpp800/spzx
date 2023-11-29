@@ -9,7 +9,7 @@
 
 #### 安装教程
 
-1.  xxxx
+1.  欢迎
 2.  xxxx
 3.  xxxx
 4.  xxxx
